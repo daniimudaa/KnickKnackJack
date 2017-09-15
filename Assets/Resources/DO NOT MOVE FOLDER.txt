@@ -1,0 +1,1 @@
+This is a resources folder, it gets special treatment from Unity where you can load any file from it dynamically, any files in here are referred to through code and therefore should not be moved at all.

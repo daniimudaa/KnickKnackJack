@@ -1,0 +1,1 @@
+This folder is used as a playground for all the scripts I work on as to not interfere with the core project, once they are complete, I will merge them into the core project at Dani's discretion.

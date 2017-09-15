@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Menus/MainMenu.unity
+    guid: c312d5423d28849c4ae89e961b436250
+  - enabled: 1
+    path: Assets/Scenes/Menus/PlayerConfiguration.unity
+    guid: 705714da06e7cf6478401de81e7d2da0
+  - enabled: 1
+    path: Assets/Scenes/CutScene_Scenes/1.Intro.unity
+    guid: 0dec90682ed74df499fa9d632d27d898
+  - enabled: 0
+    path: Assets/Scenes/TestScenes/Playground - Prototype - 1.unity
+    guid: caeafc6171eb1419ca827ae131543429
+  - enabled: 1
+    path: Assets/Scenes/Level01_Bedroom.unity
+    guid: dc3bfee0c47cd434f800a4bf12b8f483
+  - enabled: 1
+    path: Assets/Scenes/CutScene_Scenes/2.BedromToLounge.unity
+    guid: 21a904a2342b85f4daedd9384a2e9b41
+  - enabled: 1
+    path: Assets/Scenes/Level02_Lounge.unity
+    guid: bba2954756f0f4a5095f4de72aa9a92a
+  - enabled: 1
+    path: Assets/Scenes/CutScene_Scenes/3.LoungeToKitchen.unity
+    guid: fb7aaf1a9c9207541aab35ad3c9b5208
+  - enabled: 1
+    path: Assets/Scenes/Level03_Kitchen.unity
+    guid: 8fde745950068d24a99d645c5ae1e1be
+  - enabled: 1
+    path: Assets/Scenes/CutScene_Scenes/4.EndingScene.unity
+    guid: 851d8ff782cf2af4ca9fa9734dba149f
+  - enabled: 1
+    path: Assets/Scenes/CutScene_Scenes/5.AlternateEnding.unity
+    guid: b0b4ee780986746408aa0ed6c5161d09
