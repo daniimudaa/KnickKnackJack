@@ -31,5 +31,6 @@ Next thing is, after you're done working on said new feature, you'd want to merg
 5. Select your branch (please ensure that you don't mess up and select somebody else's branch, or else, that'll make them very ?? and not want to be your friends anymore)
 6. Click on "Merge into master" on the bottom
 7. Click on the "push origin" button
+8. Switch to your branch again, on the top menu, select Branch -> Delete, check the "also delete on remote" box, and hit delete.
 
 Rinse and repeat from the top for any new features.
