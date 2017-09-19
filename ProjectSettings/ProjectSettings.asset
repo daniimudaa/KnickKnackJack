@@ -598,9 +598,9 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.1
   apiCompatibilityLevel: 2
-  cloudProjectId: d89e802c-3ff2-4733-9a7e-28ecd874b05e
-  projectName: KnickKnackJack
-  organizationId: daniimudaaa
+  cloudProjectId: 
+  projectName: 
+  organizationId: 
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
