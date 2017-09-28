@@ -41,7 +41,7 @@ public class ShadowRenderer : MonoBehaviour
         if (Physics.Raycast(new Ray(collider.bounds.center, Vector3.down), out hit, 200F, layerMask))
         {
             shadow.transform.localScale = new Vector3(size, size);
-            shadow.transform.position = new Vector3(shadow.transform.position.x, collider.bounds.center.y - hit.distance, shadow.transform.position.z) + offset;
+            shadow.transform.position = new Vector3(transform.position.x, collider.bounds.center.y - hit.distance, transform.position.z) + offset;
             shadow.transform.forward = hit.normal;
         }
         else
