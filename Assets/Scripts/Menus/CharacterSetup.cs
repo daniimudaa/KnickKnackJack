@@ -59,16 +59,17 @@ public class CharacterSetup : MonoBehaviour
                     int ix = Array.FindIndex(controllerOrder, m => m == i);
 
                     controllerOrder[ix] = -1;
+                    controllerIndicators[ix].sprite = controllerNumbers[0];
+                    leaveButtons[ix].SetActive(false);
                     for (int j = ix + 1; j < controllerOrder.Length; j++)
                     {
                         controllerOrder[j - 1] = controllerOrder[j];
                         controllerIndicators[j - 1].sprite = controllerIndicators[j].sprite;
+                        leaveButtons[j - 1].SetActive(leaveButtons[j].activeInHierarchy);
                         controllerOrder[j] = -1;
-                        controllerIndicators[j - 1].sprite = controllerNumbers[0];
+                        controllerIndicators[j].sprite = controllerNumbers[0];
+                        leaveButtons[j].SetActive(false);
                     }
-
-                    controllerIndicators[ix].sprite = controllerNumbers[0];
-                    leaveButtons[ix].SetActive(false);
 
                     bool isSet = false;
                     for (int s = 0; s < startTexts.Length; s++)
