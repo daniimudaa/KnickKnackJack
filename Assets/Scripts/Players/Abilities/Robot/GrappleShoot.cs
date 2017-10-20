@@ -29,16 +29,16 @@ public class GrappleShoot : RangedAbility
 
         targetRenderer.SetActive(!currentTarget && col);
 
-        if (col)
+        ControlsManager.Controls controls = Controls;
+
+        if (col && controls != null)
         {
             targetRenderer.SetPosition(col.transform.position);
-
-            ControlsManager.Controls controls = Controls;
 
             bool interactBtn = controls.GetButtonDown(controls.buttonObjInteract);
             bool cancelBtn = controls.GetButtonDown(controls.buttonPlayerInteract);
 
-            if (controls != null && (interactBtn || (currentTarget && cancelBtn)))
+            if ((interactBtn || (currentTarget && cancelBtn)))
             {
                 if (!currentTarget)
                 {
