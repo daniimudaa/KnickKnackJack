@@ -14,12 +14,16 @@ public class TargetRenderer : MonoBehaviour
     private void Start()
     {
         targetIndicatorObject = new GameObject("targetIndicator");
-        SpriteRenderer spr = targetIndicatorObject.AddComponent<SpriteRenderer>();
+        GameObject targetIndicatorDraw = new GameObject("targetDraw");
+        targetIndicatorDraw.transform.SetParent(targetIndicatorObject.transform);
 
-        targetIndicatorObject.AddComponent<TargetIndicator>();
+        SpriteRenderer spr = targetIndicatorDraw.AddComponent<SpriteRenderer>();
+
+        targetIndicatorDraw.AddComponent<TargetIndicator>();
 
         spr.sprite = targetIndicator;
         spr.color = colorMultiplier;
+        spr.material = new Material(Shader.Find("Sprites/NoClip"));
 
         targetIndicatorObject.SetActive(active);
     }
