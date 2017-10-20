@@ -1,5 +1,6 @@
 ﻿using GamepadInput;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ControlsManager : MonoBehaviour
@@ -51,6 +52,12 @@ public class ControlsManager : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.F3))
+        {
+            player1 = new PCControls();
+            player1.gamepadIndex = 1;
+        }
+
         // If there are players to switch with
         if (unusedControls.Length > 0)
             for (int i = 0; i < playerControls.Length; i++)
@@ -159,25 +166,25 @@ public class ControlsManager : MonoBehaviour
         }
 
         // Gets whether the specified button was pushed in this tick
-        public bool GetButtonDown(GamePad.Button button)
+        public virtual bool GetButtonDown(GamePad.Button button)
         {
             return GamePad.GetButtonDown(button, GetIndexForGamepad());
         }
 
         // Gets whether the specified button was released in this tick
-        public bool GetButtonUp(GamePad.Button button)
+        public virtual bool GetButtonUp(GamePad.Button button)
         {
             return GamePad.GetButtonUp(button, GetIndexForGamepad());
         }
 
         // Gets wheter the specified button is down
-        public bool GetButton(GamePad.Button button)
+        public virtual bool GetButton(GamePad.Button button)
         {
             return GamePad.GetButton(button, GetIndexForGamepad());
         }
 
         // Gets the 2D value of the specified axis
-        public Vector2 GetAxis(GamePad.Axis axis)
+        public virtual Vector2 GetAxis(GamePad.Axis axis)
         {
             return GamePad.GetAxis(axis, GetIndexForGamepad());
         }
@@ -201,5 +208,47 @@ public class ControlsManager : MonoBehaviour
         TWO = 2,
         THREE = 3,
         FOUR = 4
+    }
+
+    public class PCControls : Controls
+    {
+        private Dictionary<GamePad.Button, KeyCode> buttonKeyMap = new Dictionary<GamePad.Button, KeyCode>{
+            { GamePad.Button.A, KeyCode.Space },
+            { GamePad.Button.B, KeyCode.Q },
+            { GamePad.Button.X, KeyCode.E },
+            { GamePad.Button.Y, KeyCode.F },
+            { GamePad.Button.RightShoulder, KeyCode.Z },
+            { GamePad.Button.LeftShoulder, KeyCode.X },
+            { GamePad.Button.Start, KeyCode.Escape },
+            { GamePad.Button.Back, KeyCode.Tab }
+        };
+
+        private Dictionary<GamePad.Axis, string> axisKeyMap = new Dictionary<GamePad.Axis, string>
+        {
+            { GamePad.Axis.LeftStick, "PC_axisMove#" }
+        };
+
+        public override bool GetButtonDown(GamePad.Button button)
+        {
+            return buttonKeyMap.ContainsKey(button) && Input.GetKeyDown(buttonKeyMap[button]);
+        }
+
+        public override bool GetButtonUp(GamePad.Button button)
+        {
+            return buttonKeyMap.ContainsKey(button) && Input.GetKeyUp(buttonKeyMap[button]);
+        }
+
+        public override bool GetButton(GamePad.Button button)
+        {
+            return buttonKeyMap.ContainsKey(button) && Input.GetKey(buttonKeyMap[button]);
+        }
+
+        public override Vector2 GetAxis(GamePad.Axis axis)
+        {
+            if (axisKeyMap.ContainsKey(axis))
+                return new Vector2(Input.GetAxis(axisKeyMap[axis].Replace('#', 'X')), Input.GetAxis(axisKeyMap[axis].Replace('#', 'Y')));
+
+            return Vector2.zero;
+        }
     }
 }
