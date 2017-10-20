@@ -54,7 +54,7 @@ public class CharacterSetup : MonoBehaviour
 
             if (controllerOrder.Contains(i))
             {
-                if (GamePad.GetButtonDown(leaveButton, controllerIndex))
+                if (GamePad.GetButtonDown(leaveButton, controllerIndex) || Input.GetKeyDown((KeyCode)((int)KeyCode.Alpha0 + (int)controllerIndex)))
                 {
                     int ix = Array.FindIndex(controllerOrder, m => m == i);
 
@@ -82,7 +82,7 @@ public class CharacterSetup : MonoBehaviour
                 continue;
             }
 
-            if (GamePad.GetButtonDown(joinButton, controllerIndex))
+            if (GamePad.GetButtonDown(joinButton, controllerIndex) || Input.GetKeyDown((KeyCode)((int)KeyCode.Keypad0 + (int)controllerIndex)))
             {
                 for (int c = 0; c < controllerOrder.Length; c++)
                     if (controllerOrder[c] == -1)
