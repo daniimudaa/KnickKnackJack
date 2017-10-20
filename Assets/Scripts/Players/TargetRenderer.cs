@@ -2,6 +2,8 @@
 
 public class TargetRenderer : MonoBehaviour
 {
+    private static Material spriteNoclip;
+
     [Space]
     public Sprite targetIndicator;
     [ColorUsage(true)]
@@ -13,6 +15,9 @@ public class TargetRenderer : MonoBehaviour
 
     private void Start()
     {
+        if (!spriteNoclip)
+            spriteNoclip = new Material(Shader.Find("Sprites/NoClip"));
+
         targetIndicatorObject = new GameObject("targetIndicator");
         GameObject targetIndicatorDraw = new GameObject("targetDraw");
         targetIndicatorDraw.transform.SetParent(targetIndicatorObject.transform);
@@ -23,7 +28,15 @@ public class TargetRenderer : MonoBehaviour
 
         spr.sprite = targetIndicator;
         spr.color = colorMultiplier;
-        spr.material = new Material(Shader.Find("Sprites/NoClip"));
+        spr.material = spriteNoclip;
+
+        GameObject buttonDraw = new GameObject("buttonDraw");
+        buttonDraw.transform.SetParent(buttonDraw.transform);
+
+        spr = buttonDraw.AddComponent<SpriteRenderer>();
+
+        //spr.sprite = Create Button Sprites
+        spr.material = spriteNoclip;
 
         targetIndicatorObject.SetActive(active);
     }

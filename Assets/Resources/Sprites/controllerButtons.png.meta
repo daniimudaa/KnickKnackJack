@@ -1,22 +1,22 @@
 fileFormatVersion: 2
 guid: 7befc3bd46d18fa429f267c4da5bf819
-timeCreated: 1503048084
+timeCreated: 1508471579
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: controllerButtons_0
-    21300002: controllerButtons_1
-    21300004: controllerButtons_2
-    21300006: controllerButtons_3
-    21300008: controllerButtons_4
-    21300010: controllerButtons_5
-    21300012: controllerButtons_6
-    21300014: controllerButtons_7
-    21300016: controllerButtons_8
-    21300018: controllerButtons_9
-    21300020: controllerButtons_10
-    21300022: controllerButtons_11
-    21300024: controllerButtons_12
+    21300000: controllerButtons_A
+    21300002: controllerButtons_B
+    21300004: controllerButtons_X
+    21300006: controllerButtons_Y
+    21300008: controllerButtons_Select
+    21300010: controllerButtons_Start
+    21300012: controllerButtons_Dpad
+    21300014: controllerButtons_LeftShoulder
+    21300016: controllerButtons_RightShoulder
+    21300018: controllerButtons_DpadUp
+    21300020: controllerButtons_DpadDown
+    21300022: controllerButtons_DpadLeft
+    21300024: controllerButtons_DpadRight
     21300026: controllerButtons_13
     21300028: controllerButtons_14
     21300030: controllerButtons_15
@@ -28,6 +28,8 @@ TextureImporter:
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
     mipMapFadeDistanceStart: 1
     mipMapFadeDistanceEnd: 3
   bumpmap:
@@ -43,10 +45,13 @@ TextureImporter:
   textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
+    serializedVersion: 2
     filterMode: -1
     aniso: -1
     mipBias: -1
-    wrapMode: 1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -94,7 +99,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: controllerButtons_0
+      name: controllerButtons_A
       rect:
         serializedVersion: 2
         x: 0
@@ -102,12 +107,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: controllerButtons_1
+      name: controllerButtons_B
       rect:
         serializedVersion: 2
         x: 64
@@ -115,12 +121,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: controllerButtons_2
+      name: controllerButtons_X
       rect:
         serializedVersion: 2
         x: 128
@@ -128,12 +135,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: controllerButtons_3
+      name: controllerButtons_Y
       rect:
         serializedVersion: 2
         x: 192
@@ -141,12 +149,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: controllerButtons_4
+      name: controllerButtons_Select
       rect:
         serializedVersion: 2
         x: 0
@@ -154,12 +163,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: controllerButtons_5
+      name: controllerButtons_Start
       rect:
         serializedVersion: 2
         x: 64
@@ -167,12 +177,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: controllerButtons_6
+      name: controllerButtons_Dpad
       rect:
         serializedVersion: 2
         x: 128
@@ -180,12 +191,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: controllerButtons_7
+      name: controllerButtons_LeftShoulder
       rect:
         serializedVersion: 2
         x: 192
@@ -193,12 +205,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: controllerButtons_8
+      name: controllerButtons_RightShoulder
       rect:
         serializedVersion: 2
         x: 0
@@ -206,12 +219,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: controllerButtons_9
+      name: controllerButtons_DpadUp
       rect:
         serializedVersion: 2
         x: 64
@@ -219,12 +233,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: controllerButtons_10
+      name: controllerButtons_DpadDown
       rect:
         serializedVersion: 2
         x: 128
@@ -232,12 +247,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: controllerButtons_11
+      name: controllerButtons_DpadLeft
       rect:
         serializedVersion: 2
         x: 192
@@ -245,12 +261,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: controllerButtons_12
+      name: controllerButtons_DpadRight
       rect:
         serializedVersion: 2
         x: 0
@@ -258,9 +275,10 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: controllerButtons_13
@@ -271,9 +289,10 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: controllerButtons_14
@@ -284,9 +303,10 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: controllerButtons_15
@@ -297,11 +317,13 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: 0
     outline: []
+    physicsShape: []
   spritePackingTag: 
   userData: 
   assetBundleName: 
