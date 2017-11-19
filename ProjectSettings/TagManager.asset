@@ -15,6 +15,7 @@ TagManager:
   - carryable
   - shootable
   - NoAI
+  - Knife
   layers:
   - Default
   - TransparentFX
