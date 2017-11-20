@@ -103,7 +103,7 @@ public class CharacterSetup : MonoBehaviour
             }
         }
 
-        if (controllerOrder[0] != -1 && GamePad.GetButton(startButton, ControlsManager.Controls.GetIndexForGamepad(controllerOrder[0])))
+        if (controllerOrder[3] != -1 && GamePad.GetButton(startButton, ControlsManager.Controls.GetIndexForGamepad(controllerOrder[3])))
         {
             StartGame();
         }
@@ -121,9 +121,6 @@ public class CharacterSetup : MonoBehaviour
         numControllers = (ControlsManager.ControlsMode)controllers;
         controllerAssignments = controllerOrder;
 
-        // SceneController.LoadScene("Scenes/TestScenes/Playground - Prototype - 1");
-
-        //just testing my kitchen scene - dani
         SceneController.LoadScene("1.Intro");
     }
 
