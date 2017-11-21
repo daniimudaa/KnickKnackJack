@@ -31,6 +31,7 @@ public class ActivateObject : MonoBehaviour
 
 		if (col.transform.tag == "PressureWeight")
 		{
+			dropCube.SetActive (true);
 			dropCube.GetComponent<Rigidbody>().isKinematic = false;
 		}
     }
