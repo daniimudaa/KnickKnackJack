@@ -15,7 +15,7 @@ public class CharController : MonoBehaviour
 
     public float rayBuffer = .1F;
 
-    public int lives = 3;
+    //public int lives = 3;
 
     [NonSerialized]
     public bool isGrounded = true;
@@ -168,7 +168,9 @@ public class CharController : MonoBehaviour
 
     public void ReGround()
     {
+		print ("BEFORE");
         transform.position = lastGround;
+		print ("AFTER");
     }
 
     public enum Character
