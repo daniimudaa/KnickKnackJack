@@ -3,7 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class MainMenus : MonoBehaviour
 {
-    public GameObject pauseMenu;
+	public CollectableManager.Level level;
+
+	public GameObject pauseMenu;
 
     public void Start()
     {
@@ -38,6 +40,7 @@ public class MainMenus : MonoBehaviour
 
     public void Reload()
     {
+		CollectableManager.GetCollectable (level).Clear ();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
     }
 
