@@ -16,6 +16,7 @@ TagManager:
   - shootable
   - NoAI
   - Knife
+  - FruitBall
   layers:
   - Default
   - TransparentFX

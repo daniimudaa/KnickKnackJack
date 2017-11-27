@@ -2,11 +2,18 @@
 
 public class DeathTriggers : MonoBehaviour
 {
-    public GameObject deathMenu;
+	GameObject script;
+	UIScript UIscript;
 
-	public GameObject Death1;
-	public GameObject Death2;
-	public GameObject Death3;
+	public void Start ()
+	{
+	}
+
+	public void Update()
+	{
+		script = GameObject.Find("LevelInterface");
+		UIscript = script.GetComponent<UIScript>();
+	}
 
     private void OnTriggerEnter(Collider col)
     {
@@ -49,19 +56,19 @@ public class DeathTriggers : MonoBehaviour
 
 			if (lives <= 2)
 			{
-				Death1.SetActive(false);
+				UIscript.Death1.SetActive(false);
 			}
 
 			if (lives <= 1)
 			{
-				Death2.SetActive(false);
+				UIscript.Death2.SetActive(false);
 			}
 
             if (lives <= 0)
             {
-				Death3.SetActive(false);
+				UIscript.Death3.SetActive(false);
                 Time.timeScale = 0;
-                deathMenu.SetActive(true);
+				UIscript.deathMenu.SetActive(true);
             }
             else if (controller)
             {
