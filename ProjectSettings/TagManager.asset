@@ -17,6 +17,7 @@ TagManager:
   - NoAI
   - Knife
   - FruitBall
+  - Trapped
   layers:
   - Default
   - TransparentFX
