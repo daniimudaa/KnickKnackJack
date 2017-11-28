@@ -9,10 +9,10 @@ public class PlayAnimation : MonoBehaviour
 
 	void OnTriggerEnter(Collider col)
 	{
+
 		if (col.gameObject.CompareTag("Player"))
 		{
 			CharController controller = col.gameObject.GetComponent<CharController>();
-			print ("Teddy Recognised");
 
 			if (col.gameObject.name == "collider")
 			{
@@ -21,5 +21,13 @@ public class PlayAnimation : MonoBehaviour
 				Destroy (gameObject);
 			}		
 		}
+
+		if (col.gameObject.name == "Doll") 
+		{
+			anim.Play();
+		}
+	
 	}
+
+
 }

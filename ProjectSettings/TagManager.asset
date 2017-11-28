@@ -18,6 +18,9 @@ TagManager:
   - Knife
   - FruitBall
   - Trapped
+  - Shelf
+  - JackInBox
+  - Book
   layers:
   - Default
   - TransparentFX
