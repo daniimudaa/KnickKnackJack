@@ -14,10 +14,11 @@ public class PlayAnimation : MonoBehaviour
 			CharController controller = col.gameObject.GetComponent<CharController>();
 			print ("Teddy Recognised");
 
-			if (controller.characterIndex == CharController.Character.TEDDY)
+			if (col.gameObject.name == "collider")
 			{
 				print ("Playing Animation");
 				anim.Play();
+				Destroy (gameObject);
 			}		
 		}
 	}
