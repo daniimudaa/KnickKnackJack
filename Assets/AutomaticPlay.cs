@@ -13,6 +13,7 @@ public class AutomaticPlay : MonoBehaviour
 	public Animation anim6;
 	public Animation anim7;
 	public Animation anim8;
+	public Animation anim9;
 
 	void Update () 
 	{
@@ -21,6 +22,7 @@ public class AutomaticPlay : MonoBehaviour
 
 	IEnumerator MyAnimations()
 	{
+		anim9.Play ();
 		anim.Play ();
 		yield return new WaitForSeconds(4);
 		anim1.Play ();
