@@ -27,10 +27,12 @@ public class DeathTriggers : MonoBehaviour
 			CharController charcontroller;
 			do {
 				charcontroller = go.GetComponent<CharController>();
-				if (go.transform.parent != null) {
+				if (go.transform.parent != null) 
+				{
 					go = go.transform.parent.gameObject;
 				}
-				else {
+				else 
+				{
 					go = null;
 				}
 			} while (charcontroller == null && go != null);
