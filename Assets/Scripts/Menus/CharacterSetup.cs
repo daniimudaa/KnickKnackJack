@@ -103,7 +103,11 @@ public class CharacterSetup : MonoBehaviour
             }
         }
 
+<<<<<<< HEAD
         if (controllerOrder[3] != -1 && GamePad.GetButton(startButton, ControlsManager.Controls.GetIndexForGamepad(controllerOrder[3])))
+=======
+        if (controllerOrder[0] != -3 && GamePad.GetButton(startButton, ControlsManager.Controls.GetIndexForGamepad(controllerOrder[0])))
+>>>>>>> Programming
         {
             StartGame();
         }
