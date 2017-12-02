@@ -15,7 +15,7 @@ public class CharController : MonoBehaviour
 
     public float rayBuffer = .1F;
 
-    public int lives = 3;
+    //public int lives = 3;
 
     [NonSerialized]
     public bool isGrounded = true;
@@ -41,7 +41,8 @@ public class CharController : MonoBehaviour
 
     private new Collider collider;
 
-    private Vector3 lastGround;
+    public Vector3 lastGround;
+	public bool regrounding;
 
     void Start()
     {
@@ -57,9 +58,8 @@ public class CharController : MonoBehaviour
 
     void Update()
     {
-        print("is climbable" + climbable);
-        print("is climbable for others" + climbable2);
-        print("isGrounded " + isGrounded);
+		regrounding = false;
+
         if (!climbable || !climbable2)
         {
             CharacterControls();
@@ -151,7 +151,7 @@ public class CharController : MonoBehaviour
 
         if (isGrounded)
         {
-            lastGround = transform.position;
+            lastGround = transform.localPosition;
             // If the controls are available and the jump button is down
             if (controls != null && controls.GetButtonDown(controls.buttonJump))
             {
@@ -168,7 +168,10 @@ public class CharController : MonoBehaviour
 
     public void ReGround()
     {
-        transform.position = lastGround;
+		print ("BEFORE");
+		regrounding = true;
+        transform.localPosition = lastGround;
+		print ("AFTER");
     }
 
     public enum Character

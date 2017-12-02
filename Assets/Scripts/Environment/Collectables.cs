@@ -1,14 +1,17 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class Collectables : MonoBehaviour
 {
+	public CollectableManager.Level level;
+
     public string id;
 
     public GameObject blockedBy;
 
     private void Awake()
     {
-        if (CollectableManager.collected.Contains(id))
+		if (CollectableManager.GetCollectable(level).Contains(id))
             Destroy(gameObject);
     }
 
@@ -22,8 +25,8 @@ public class Collectables : MonoBehaviour
             //play audio sound
             //play particle effect
 
-            if (!CollectableManager.collected.Contains(id))
-                CollectableManager.collected.Add(id);
+			if (!CollectableManager.GetCollectable(level).Contains(id))
+				CollectableManager.GetCollectable(level).Add(id);
             Destroy(gameObject);
         }
     }

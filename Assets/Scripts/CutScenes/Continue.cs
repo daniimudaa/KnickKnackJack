@@ -12,7 +12,7 @@ public class Continue : MonoBehaviour
     {
         if (GamePad.GetButtonDown(continueButton, GamePad.Index.Any))
         {
-            if (!string.IsNullOrEmpty(alternateScene) && CollectableManager.collected.Count >= CollectableManager.totalCollectibles)
+            if (!string.IsNullOrEmpty(alternateScene) && CollectableManager.Count >= CollectableManager.totalCollectibles)
                 SceneController.LoadScene(alternateScene);
             else if (!string.IsNullOrEmpty(sceneName))
                 SceneController.LoadScene(sceneName);

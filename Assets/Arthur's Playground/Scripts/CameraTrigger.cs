@@ -37,7 +37,6 @@ public class CameraTrigger : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        print(other.tag);
         if (other.CompareTag("Player"))
             containsPlayers = true;
     }

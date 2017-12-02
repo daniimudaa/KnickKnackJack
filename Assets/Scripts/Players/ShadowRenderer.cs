@@ -14,7 +14,7 @@ public class ShadowRenderer : MonoBehaviour
 
     private void Awake()
     {
-        collider = GetComponent<Collider>();
+		collider = GetComponentInChildren<Collider>();
 
         GameObject go = new GameObject("shadowRender");
         go.transform.SetParent(transform, false);
