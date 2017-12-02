@@ -35,3 +35,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CutScene_Scenes/5.AlternateEnding.unity
     guid: b0b4ee780986746408aa0ed6c5161d09
+  - enabled: 1
+    path: Assets/Scenes/Menus/Credits.unity
+    guid: 4422b8625b2df42139b79f5fc2951555
