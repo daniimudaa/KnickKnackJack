@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
-public class ButtonAudio : MonoBehaviour
+public class ButtonAudio : MonoBehaviour, ISelectHandler
 {
 	public AudioSource source; 
 
@@ -13,7 +11,7 @@ public class ButtonAudio : MonoBehaviour
 	}
 
 	// When highlighted with mouse.
-	public void OnPointerEnter (Collider col)
+	public void OnSelect (BaseEventData eventData)
 	{
 		
 		print ("Playing Sound");
