@@ -14,9 +14,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CutScene_Scenes/1.Intro.unity
     guid: 0dec90682ed74df499fa9d632d27d898
-  - enabled: 0
-    path: Assets/Scenes/TestScenes/Playground - Prototype - 1.unity
-    guid: caeafc6171eb1419ca827ae131543429
   - enabled: 1
     path: Assets/Scenes/Level01_Bedroom.unity
     guid: dc3bfee0c47cd434f800a4bf12b8f483
