@@ -146,25 +146,24 @@ public class MainMenus : MonoBehaviour
 
 	public void ReSpawn()
 	{
-		if (charcontrolScript.entered1)
-		{ 
-			respawning1 = true;
-			charcontrolScript.Checkpoints();
-		}
+        if (charcontrolScript.entered3)
+        { 
+            respawning3 = true;
+            charcontrolScript.Checkpoints();
+        }
 
-		if (charcontrolScript.entered1 = true) 
+		else if (charcontrolScript.entered2) 
 		{ 
 			respawning2 = true;
 			charcontrolScript.Checkpoints();
 		}
 
-		if (charcontrolScript.entered1 = true)
-		{ 
-			respawning3 = true;
-			charcontrolScript.Checkpoints();
-		}
-
-	}
+        else if (charcontrolScript.entered1)
+        { 
+            respawning1 = true;
+            charcontrolScript.Checkpoints();
+        }
+   	}
 
     public void QuitToMainMenu()
     {
