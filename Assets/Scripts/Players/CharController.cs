@@ -44,6 +44,17 @@ public class CharController : MonoBehaviour
     public Vector3 lastGround;
 	public bool regrounding;
 
+
+	private MainMenus menuScript;
+	private Lives livesScript;
+	public Transform respawn1; 
+	public Transform respawn2;
+	public Transform respawn3;
+	public bool entered1;
+	public bool entered2;
+	public bool entered3;
+	public GameObject MenuScriptObj;
+
     void Start()
     {
         collider = GetComponentInChildren<Collider>();
@@ -54,6 +65,10 @@ public class CharController : MonoBehaviour
         anim = GetComponent<Animator>();
 
         controlsManager = GetComponentInParent<ControlsManager>(); // Get the controls manager from the parent
+
+		entered1 = false;
+		entered2 = false;
+		entered3 = false;
     }
 
     void Update()
@@ -168,10 +183,8 @@ public class CharController : MonoBehaviour
 
     public void ReGround()
     {
-		print ("BEFORE");
 		regrounding = true;
         transform.localPosition = lastGround;
-		print ("AFTER");
     }
 
     public enum Character
@@ -181,5 +194,50 @@ public class CharController : MonoBehaviour
         ROBOT = 2,
         DOLL = 3
     }
+
+	public void Checkpoints()
+	{
+		menuScript = MenuScriptObj.GetComponent<MainMenus>();
+
+		if (menuScript.respawning1 == true) 
+		{
+			this.transform.position = new Vector3 (respawn1.position.x, respawn1.position.y, respawn1.position.z);
+		}
+
+		if (menuScript.respawning2 == true) 
+		{
+			this.transform.position = new Vector3 (respawn2.position.x, respawn2.position.y, respawn2.position.z);
+		}
+
+		if (menuScript.respawning3 == true) 
+		{
+			this.transform.position = new Vector3 (respawn3.position.x, respawn3.position.y, respawn3.position.z);
+		}	
+	}
+
+	void OnTriggerEnter (Collider col)
+	{
+		if (col.transform.name == "Spawn1") 
+		{
+			entered1 = true;
+			entered2 = false;
+			entered3 = false;
+		}
+
+		if (col.gameObject.name == "Spawn2") 
+		{
+			entered1 = false;
+			entered2 = true;
+			entered3 = false;
+		}
+
+		if (col.gameObject.name == "Spawn3") 
+		{
+			entered1 = false;
+			entered2 = false;
+			entered3 = true;
+		}
+	}
+
 
 }

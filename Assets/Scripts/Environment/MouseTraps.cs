@@ -18,9 +18,8 @@ public class MouseTraps : MonoBehaviour
 	{
 		if (col.transform.tag == "Trapped") 
 		{
-			print ("Trapped Triggered");
-			deathscript.enabled = false;
-			print ("Destroyed Death Trigger");
+			//mousetrapAnim.Play();
+			Destroy (gameObject.GetComponent<DeathTriggers> ());
 		}
 
 		if (col.transform.tag == "Player") 

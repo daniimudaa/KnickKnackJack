@@ -21,12 +21,27 @@ public class MainMenus : MonoBehaviour
 	public GameObject turnoffUI_4;
 	public GameObject turnoffUI_5;
 
+	private Lives lives;
+	public CharController charcontrolScript;
+	public bool respawning1;
+	public bool respawning2;
+	public bool respawning3;
+	public GameObject playerManager;
+
 
     public void Start()
     {
         Time.timeScale = 1;
 
 		controlScreen = false;
+
+		respawning1 = false; 
+		respawning2 = false;
+		respawning3 = false;
+
+		lives = GetComponent<Lives> ();
+		charcontrolScript = playerManager.GetComponentInChildren<CharController> ();
+
     }
 
 	public void Update ()
@@ -128,6 +143,28 @@ public class MainMenus : MonoBehaviour
 		CollectableManager.GetCollectable (level).Clear ();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
     }
+
+	public void ReSpawn()
+	{
+		if (charcontrolScript.entered1)
+		{ 
+			respawning1 = true;
+			charcontrolScript.Checkpoints();
+		}
+
+		if (charcontrolScript.entered1 = true) 
+		{ 
+			respawning2 = true;
+			charcontrolScript.Checkpoints();
+		}
+
+		if (charcontrolScript.entered1 = true)
+		{ 
+			respawning3 = true;
+			charcontrolScript.Checkpoints();
+		}
+
+	}
 
     public void QuitToMainMenu()
     {
