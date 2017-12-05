@@ -201,15 +201,15 @@ public class CharController : MonoBehaviour
 
         if (menuScript.respawning3) 
         {
-            this.transform.position = new Vector3 (respawn3.position.x, respawn3.position.y, respawn3.position.z);
+			this.transform.position = respawn3.position; 
         }
         else if (menuScript.respawning2) 
         {
-            this.transform.position = new Vector3 (respawn2.position.x, respawn2.position.y, respawn2.position.z);
+            this.transform.position = respawn2.position;
         }
 		else if (menuScript.respawning1) 
 		{
-			this.transform.position = new Vector3 (respawn1.position.x, respawn1.position.y, respawn1.position.z);
+			this.transform.position = respawn1.position;
 		}
 	}
 

@@ -23,10 +23,17 @@ public class MainMenus : MonoBehaviour
 
 	private Lives lives;
 	public CharController charcontrolScript;
+	public CharController charcontrolScript1;
+	public CharController charcontrolScript2;
+	public CharController charcontrolScript3;
 	public bool respawning1;
 	public bool respawning2;
 	public bool respawning3;
 	public GameObject playerManager;
+	public GameObject gnome;
+	public GameObject teddy;
+	public GameObject robot;
+	public GameObject doll;
 
 
     public void Start()
@@ -40,7 +47,10 @@ public class MainMenus : MonoBehaviour
 		respawning3 = false;
 
 		lives = GetComponent<Lives> ();
-		charcontrolScript = playerManager.GetComponentInChildren<CharController> ();
+		charcontrolScript = gnome.GetComponent<CharController>();
+		charcontrolScript1 = teddy.GetComponent<CharController>();
+		charcontrolScript2 = robot.GetComponent<CharController>();
+		charcontrolScript3 = doll.GetComponent<CharController>();
 
     }
 
@@ -150,18 +160,27 @@ public class MainMenus : MonoBehaviour
         { 
             respawning3 = true;
             charcontrolScript.Checkpoints();
+			charcontrolScript1.Checkpoints();
+			charcontrolScript2.Checkpoints();
+			charcontrolScript3.Checkpoints(); 
         }
 
 		else if (charcontrolScript.entered2) 
 		{ 
 			respawning2 = true;
 			charcontrolScript.Checkpoints();
+			charcontrolScript1.Checkpoints();
+			charcontrolScript2.Checkpoints();
+			charcontrolScript3.Checkpoints(); 
 		}
 
         else if (charcontrolScript.entered1)
         { 
             respawning1 = true;
             charcontrolScript.Checkpoints();
+			charcontrolScript1.Checkpoints();
+			charcontrolScript2.Checkpoints();
+			charcontrolScript3.Checkpoints(); 
         }
    	}
 
