@@ -198,18 +198,28 @@ public class CharController : MonoBehaviour
 	public void Checkpoints()
 	{
 		menuScript = MenuScriptObj.GetComponent<MainMenus>();
+		livesScript = FindObjectOfType<Lives> ();
 
         if (menuScript.respawning3) 
         {
 			this.transform.position = respawn3.position; 
+			livesScript.lives = 1;
+			menuScript.deathMenu.SetActive (false);
+			Time.timeScale = 1;
         }
         else if (menuScript.respawning2) 
         {
             this.transform.position = respawn2.position;
+			menuScript.deathMenu.SetActive (false);
+			livesScript.lives = 1;
+			Time.timeScale = 1;
         }
 		else if (menuScript.respawning1) 
 		{
 			this.transform.position = respawn1.position;
+			livesScript.lives = 1;
+			menuScript.deathMenu.SetActive (false);
+			Time.timeScale = 1;
 		}
 	}
 

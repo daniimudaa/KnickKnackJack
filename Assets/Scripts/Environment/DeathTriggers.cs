@@ -4,9 +4,11 @@ public class DeathTriggers : MonoBehaviour
 {
 	GameObject script;
 	UIScript UIscript;
+	MainMenus mainMenu;
 
 	public void Start ()
 	{
+		mainMenu = FindObjectOfType<MainMenus> ();
 	}
 
 	public void Update()
@@ -56,26 +58,45 @@ public class DeathTriggers : MonoBehaviour
 
 			print ("DeathTriggers.OnTriggerEnter - 3 lives = " + lives);
 
+//			if (mainMenu.respawning1 || mainMenu.respawning2 || mainMenu.respawning3)
+//			{
+//				UIscript.Death3.SetActive(true);
+//				UIscript.Death2.SetActive(true);
+//				UIscript.Death1.SetActive(true);
+//			}
+//
+
 			if (lives <= 2)
 			{
-				UIscript.Death1.SetActive(false);
+				UIscript.Death3.SetActive(true);
+				UIscript.Death2.SetActive(true);
+				UIscript.Death1.SetActive(true);
 			}
-
 			if (lives <= 1)
 			{
-				UIscript.Death2.SetActive(false);
+				UIscript.Death3.SetActive(true);
+				UIscript.Death2.SetActive(true);
+				UIscript.Death1.SetActive(false);
 			}
-
             if (lives <= 0)
             {
-				UIscript.Death3.SetActive(false);
-                Time.timeScale = 0;
-				UIscript.deathMenu.SetActive(true);
+				UIscript.Death3.SetActive(true);
+				UIscript.Death2.SetActive(false);
+				UIscript.Death1.SetActive(false);
             }
+			if (lives <= -1 )
+			{
+				UIscript.Death3.SetActive(false);
+				UIscript.Death2.SetActive(false);
+				UIscript.Death1.SetActive(false);
+				Time.timeScale = 0;
+				UIscript.deathMenu.SetActive(true);
+			}
             else if (controller)
             {
 				charcontroller.ReGround();
             }
+				
         }
     }
 }

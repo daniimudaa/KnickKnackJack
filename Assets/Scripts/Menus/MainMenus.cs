@@ -8,6 +8,8 @@ public class MainMenus : MonoBehaviour
 
 	public GameObject pauseMenu;
 
+	public GameObject deathMenu;
+
 	public bool controlScreen;
 
 	public GameObject gnomeControlMenu;
@@ -34,6 +36,8 @@ public class MainMenus : MonoBehaviour
 	public GameObject teddy;
 	public GameObject robot;
 	public GameObject doll;
+	UIScript UIscript; 
+
 
 
     public void Start()
@@ -51,6 +55,8 @@ public class MainMenus : MonoBehaviour
 		charcontrolScript1 = teddy.GetComponent<CharController>();
 		charcontrolScript2 = robot.GetComponent<CharController>();
 		charcontrolScript3 = doll.GetComponent<CharController>();
+
+		UIscript = FindObjectOfType<UIScript>();
 
     }
 
@@ -156,6 +162,10 @@ public class MainMenus : MonoBehaviour
 
 	public void ReSpawn()
 	{
+		UIscript.Death3.SetActive(true);
+		UIscript.Death2.SetActive(true);
+		UIscript.Death1.SetActive(true);
+		
         if (charcontrolScript.entered3)
         { 
             respawning3 = true;
