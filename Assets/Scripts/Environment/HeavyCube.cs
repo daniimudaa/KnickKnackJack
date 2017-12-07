@@ -51,8 +51,10 @@ public class HeavyCube : MonoBehaviour
         {
             CharController controller = collision.gameObject.GetComponent<CharController>();
 
-            if (controller && controller.characterIndex == CharController.Character.TEDDY)
-                rigidbody.isKinematic = true;
+			if (controller && controller.characterIndex == CharController.Character.TEDDY) 
+			{
+				rigidbody.isKinematic = true;
+			}
         }
     }
 
