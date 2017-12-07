@@ -167,6 +167,8 @@ public class CharController : MonoBehaviour
         if (isGrounded)
         {
             lastGround = transform.localPosition;
+			anim.SetBool ("jump", false);
+
             // If the controls are available and the jump button is down
             if (controls != null && controls.GetButtonDown(controls.buttonJump))
             {
@@ -178,6 +180,7 @@ public class CharController : MonoBehaviour
         else if (gameObject.GetComponent<Rigidbody>().useGravity)
         {
             gameObject.GetComponent<Rigidbody>().AddForce(Vector3.down * variableForceDown, ForceMode.Force);
+			anim.SetBool ("jump", true);
         }
     }
 
