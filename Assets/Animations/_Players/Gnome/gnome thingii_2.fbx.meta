@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 85a0b8123d84e7447ad8d4d9e64c0249
-timeCreated: 1512655743
+guid: 05aeec70b8c7c5443a006551872f74d8
+timeCreated: 1512714531
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
-    100000: default
+    100000: default1
     100002: //RootNode
     100004: Gnome_Beard_LP:Gnome_Beard_LP:Gnome_LP
     100006: mixamorig:Head
@@ -41,7 +41,7 @@ ModelImporter:
     100066: mixamorig:Spine
     100068: mixamorig:Spine1
     100070: mixamorig:Spine2
-    400000: default
+    400000: default1
     400002: //RootNode
     400004: Gnome_Beard_LP:Gnome_Beard_LP:Gnome_LP
     400006: mixamorig:Head
@@ -77,11 +77,11 @@ ModelImporter:
     400066: mixamorig:Spine
     400068: mixamorig:Spine1
     400070: mixamorig:Spine2
-    2300000: default
-    3300000: default
-    4300000: default
+    2300000: default1
+    3300000: default1
+    4300000: default1
     4300002: Gnome_Beard_LP:Gnome_Beard_LP:Gnome_LP
-    7400000: Walk
+    7400000: Take 001
     9500000: //RootNode
     13700000: Gnome_Beard_LP:Gnome_Beard_LP:Gnome_LP
   materials:
@@ -107,35 +107,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Walk
-      takeName: mixamo.com
-      firstFrame: 0
-      lastFrame: 26
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []

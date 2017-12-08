@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 85a0b8123d84e7447ad8d4d9e64c0249
-timeCreated: 1512655743
+guid: 61bd473b213e2544aa61a5a3a047d5cf
+timeCreated: 1512714870
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
-    100000: default
+    100000: default1
     100002: //RootNode
     100004: Gnome_Beard_LP:Gnome_Beard_LP:Gnome_LP
     100006: mixamorig:Head
@@ -41,7 +41,7 @@ ModelImporter:
     100066: mixamorig:Spine
     100068: mixamorig:Spine1
     100070: mixamorig:Spine2
-    400000: default
+    400000: default1
     400002: //RootNode
     400004: Gnome_Beard_LP:Gnome_Beard_LP:Gnome_LP
     400006: mixamorig:Head
@@ -77,11 +77,11 @@ ModelImporter:
     400066: mixamorig:Spine
     400068: mixamorig:Spine1
     400070: mixamorig:Spine2
-    2300000: default
-    3300000: default
-    4300000: default
+    2300000: default1
+    3300000: default1
+    4300000: default1
     4300002: Gnome_Beard_LP:Gnome_Beard_LP:Gnome_LP
-    7400000: Walk
+    7400000: Walk___TESt
     9500000: //RootNode
     13700000: Gnome_Beard_LP:Gnome_Beard_LP:Gnome_LP
   materials:
@@ -109,10 +109,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Walk
-      takeName: mixamo.com
-      firstFrame: 0
-      lastFrame: 26
+      name: Walk___TESt
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 120
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
