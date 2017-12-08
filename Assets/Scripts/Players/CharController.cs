@@ -17,7 +17,7 @@ public class CharController : MonoBehaviour
 
     //public int lives = 3;
 
-    [NonSerialized]
+    //[NonSerialized]
     public bool isGrounded = true;
 
     public float currentSpeed;
@@ -55,6 +55,13 @@ public class CharController : MonoBehaviour
 	public bool entered3;
 	public GameObject MenuScriptObj;
 
+	public bool doJump = false;
+	public bool isTeddyJump = false;
+	public bool teddyJump = false;
+	public float teddyJumpVelocity = 100f;
+	public float teddyJumpGravity = 800f;
+
+
     void Start()
     {
         collider = GetComponentInChildren<Collider>();
@@ -81,8 +88,12 @@ public class CharController : MonoBehaviour
         }
 
         UpdateAnimator();
-        CharacterJump();
     }
+
+	void FixedUpdate()
+	{
+		CharacterJump();
+	}
 
     public void CharacterControls()
     {
@@ -99,6 +110,9 @@ public class CharController : MonoBehaviour
         // If there is no controller assigned, stop, we don't control the movement at all
         if (controls == null)
             return;
+
+		// Check if we need to jump.  We do the actual jumping in FixedUpdate
+		doJump = controls.GetButtonDown (controls.buttonJump);
 
         // Reset current speed
         currentSpeed = 0F;
@@ -157,30 +171,49 @@ public class CharController : MonoBehaviour
 
     void CharacterJump()
     {
-        // Get the current controls
-        ControlsManager.Controls controls = controlsManager.GetControlsForCharacter(characterIndex);
+//        bool gnd = isGrounded;
 
-        bool gnd = isGrounded;
+		int layerMask = 1 << 8;  // The player is on layer 8
 
-        isGrounded = Physics.Raycast(new Ray(collider.bounds.center, Vector3.down), collider.bounds.extents.y + rayBuffer);
+		// This would cast rays only against colliders in layer 8.
+		// But instead we want to collide against everything except layer 8. The ~ operator does this, it inverts a bitmask.
+		layerMask = ~layerMask;
+
+		isGrounded = Physics.Raycast(new Ray(collider.bounds.center, Vector3.down), collider.bounds.extents.y + rayBuffer, layerMask, QueryTriggerInteraction.Ignore);
 
         if (isGrounded)
         {
             lastGround = transform.localPosition;
-			anim.SetBool ("jump", false);
+			isTeddyJump = false;
+
+			//anim.SetBool ("jump", false);
 
             // If the controls are available and the jump button is down
-            if (controls != null && controls.GetButtonDown(controls.buttonJump))
+            if (doJump)
             {
-                gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * variableForceUp, ForceMode.Impulse);
-                print("waiiting for jump");
-                isGrounded = false;
+				doJump = false;
+
+				isGrounded = false;
+
+				print("waiiting for jump");
+
+				if (teddyJump) {
+					isTeddyJump = true;
+					gameObject.GetComponent<Rigidbody> ().AddForce (Vector3.up * teddyJumpVelocity, ForceMode.VelocityChange);
+				} else {
+					gameObject.GetComponent<Rigidbody> ().AddForce (Vector3.up * variableForceUp, ForceMode.Impulse);
+				}
             }
         }
         else if (gameObject.GetComponent<Rigidbody>().useGravity)
         {
-            gameObject.GetComponent<Rigidbody>().AddForce(Vector3.down * variableForceDown, ForceMode.Force);
-			anim.SetBool ("jump", true);
+			if (isTeddyJump) {
+				gameObject.GetComponent<Rigidbody> ().AddForce (Vector3.down * teddyJumpGravity, ForceMode.Force);
+			} else {
+				gameObject.GetComponent<Rigidbody> ().AddForce (Vector3.down * variableForceDown, ForceMode.Force);
+			}
+
+			//anim.SetBool ("jump", true);
         }
     }
 
