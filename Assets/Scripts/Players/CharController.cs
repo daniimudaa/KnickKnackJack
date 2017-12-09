@@ -186,7 +186,7 @@ public class CharController : MonoBehaviour
             lastGround = transform.localPosition;
 			isTeddyJump = false;
 
-			//anim.SetBool ("jump", false);
+			anim.SetBool ("jump", false);
 
             // If the controls are available and the jump button is down
             if (doJump)
@@ -213,7 +213,7 @@ public class CharController : MonoBehaviour
 				gameObject.GetComponent<Rigidbody> ().AddForce (Vector3.down * variableForceDown, ForceMode.Force);
 			}
 
-			//anim.SetBool ("jump", true);
+			anim.SetBool ("jump", true);
         }
     }
 
