@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LayDown : CharacterAbility {
+public class LayDown : CharacterAbility 
+{
     public GameObject jumpBox;
 
     public float bounceHeight;
