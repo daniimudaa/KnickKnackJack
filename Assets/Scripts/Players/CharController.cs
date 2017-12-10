@@ -66,6 +66,7 @@ public class CharController : MonoBehaviour
 	public bool audioPlay;
 
 	public AudioClip[] deathSounds;
+	public AudioClip[] lastDeathSounds;
 	public AudioSource playerAudioSource;
 
 

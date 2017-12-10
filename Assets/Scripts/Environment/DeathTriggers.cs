@@ -13,11 +13,14 @@ public class DeathTriggers : MonoBehaviour
 
 	CharController charControler;
 
+	public bool alive;
+
 
 
 	public void Start ()
 	{
 		mainMenu = FindObjectOfType<MainMenus> ();
+		alive = true;
 	}
 
 	public void Update()
@@ -81,18 +84,21 @@ public class DeathTriggers : MonoBehaviour
 				UIscript.Death3.SetActive(true);
 				UIscript.Death2.SetActive(true);
 				UIscript.Death1.SetActive(true);
+				alive = true;
 			}
 			if (lives <= 1)
 			{				
 				UIscript.Death3.SetActive(true);
 				UIscript.Death2.SetActive(true);
 				UIscript.Death1.SetActive(false);
+				alive = true;
 			}
             if (lives <= 0)
             {
 				UIscript.Death3.SetActive(true);
 				UIscript.Death2.SetActive(false);
 				UIscript.Death1.SetActive(false);
+				alive = true;
             }
 			if (lives <= -1 )
 			{
@@ -101,6 +107,7 @@ public class DeathTriggers : MonoBehaviour
 				UIscript.Death1.SetActive(false);
 				Time.timeScale = 0;
 				UIscript.deathMenu.SetActive(true);
+				alive = false;
 			}
             else if (controller)
             {
@@ -109,24 +116,60 @@ public class DeathTriggers : MonoBehaviour
 				
 
 			if (col.name == "Gnome") 
-			{
-				gnome.GetComponent<CharController>().playerAudioSource.clip = gnome.GetComponent<CharController>().deathSounds [Random.Range (1, gnome.GetComponent<CharController>().deathSounds.Length)];  
-				gnome.GetComponent<CharController>().playerAudioSource.Play (); 
+			{ 
+				if (alive) 
+				{
+					gnome.GetComponent<CharController>().playerAudioSource.clip = gnome.GetComponent<CharController>().deathSounds [Random.Range (1, gnome.GetComponent<CharController>().deathSounds.Length)];  
+					gnome.GetComponent<CharController>().playerAudioSource.Play (); 
+				}
+
+				if (!alive) 
+				{
+					gnome.GetComponent<CharController>().playerAudioSource.clip = gnome.GetComponent<CharController>().lastDeathSounds [Random.Range (1, gnome.GetComponent<CharController>().lastDeathSounds.Length)];  
+					gnome.GetComponent<CharController>().playerAudioSource.Play ();
+				}
 			}
 			if (col.name == "collider") 
 			{
-				teddy.GetComponent<CharController>().playerAudioSource.clip = teddy.GetComponent<CharController>().deathSounds [Random.Range (1, teddy.GetComponent<CharController>().deathSounds.Length)];  
-				teddy.GetComponent<CharController>().playerAudioSource.Play (); 
+				if (alive) 
+				{
+					teddy.GetComponent<CharController>().playerAudioSource.clip = teddy.GetComponent<CharController>().deathSounds [Random.Range (1, teddy.GetComponent<CharController>().deathSounds.Length)];  
+					teddy.GetComponent<CharController>().playerAudioSource.Play (); 
+				}
+
+				if (!alive) 
+				{
+					teddy.GetComponent<CharController>().playerAudioSource.clip = teddy.GetComponent<CharController>().lastDeathSounds [Random.Range (1, teddy.GetComponent<CharController>().lastDeathSounds.Length)];  
+					teddy.GetComponent<CharController>().playerAudioSource.Play ();
+				}
 			}
 			if (col.name == "Doll") 
 			{
-				doll.GetComponent<CharController>().playerAudioSource.clip = doll.GetComponent<CharController>().deathSounds [Random.Range (1, doll.GetComponent<CharController>().deathSounds.Length)];  
-				doll.GetComponent<CharController>().playerAudioSource.Play (); 
+				if (alive) 
+				{
+					doll.GetComponent<CharController>().playerAudioSource.clip = doll.GetComponent<CharController>().deathSounds [Random.Range (1, doll.GetComponent<CharController>().deathSounds.Length)];  
+					doll.GetComponent<CharController>().playerAudioSource.Play (); 
+				}
+
+				if (!alive) 
+				{
+					doll.GetComponent<CharController>().playerAudioSource.clip = doll.GetComponent<CharController>().lastDeathSounds [Random.Range (1, doll.GetComponent<CharController>().lastDeathSounds.Length)];  
+					doll.GetComponent<CharController>().playerAudioSource.Play ();
+				}
 			}
 			if (col.name == "Robot") 
 			{
-				robot.GetComponent<CharController>().playerAudioSource.clip = robot.GetComponent<CharController>().deathSounds [Random.Range (1, robot.GetComponent<CharController>().deathSounds.Length)];  
-				robot.GetComponent<CharController>().playerAudioSource.Play (); 
+				if (alive) 
+				{
+					robot.GetComponent<CharController>().playerAudioSource.clip = robot.GetComponent<CharController>().deathSounds [Random.Range (1, robot.GetComponent<CharController>().deathSounds.Length)];  
+					robot.GetComponent<CharController>().playerAudioSource.Play (); 
+				}
+
+				if (!alive) 
+				{
+					robot.GetComponent<CharController>().playerAudioSource.clip = robot.GetComponent<CharController>().lastDeathSounds [Random.Range (1, robot.GetComponent<CharController>().lastDeathSounds.Length)];  
+					robot.GetComponent<CharController>().playerAudioSource.Play ();
+				}
 			}
 
         }

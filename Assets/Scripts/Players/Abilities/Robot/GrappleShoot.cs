@@ -84,12 +84,14 @@ public class GrappleShoot : RangedAbility
                 else
                 {
                     if (!cancelBtn)
-                        currentTarget.StartCoroutine(Zipline(transform, rigidbody, currentTarget.traversalTime, transform.position, currentTarget.transform.position + currentTarget.offset));
+						
+                    currentTarget.StartCoroutine(Zipline(transform, rigidbody, currentTarget.traversalTime, transform.position, currentTarget.transform.position + currentTarget.offset));
                     Destroy(grapplePoint);
                     currentTarget = null;
 					teleporterRing.SetActive (false);
 					endTeleporterRing.SetActive (false);
 					RobotLoopGrappleSource.Stop();
+					gameObject.GetComponent<CharController> ().movementEnabled = true;
 
                 }
             }
