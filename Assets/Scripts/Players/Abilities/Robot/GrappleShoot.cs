@@ -14,9 +14,16 @@ public class GrappleShoot : RangedAbility
     public AudioSource RobotGrappleSource;
     public AudioClip RobotGrappleAudio;
 
+//	public GameObject GnomeParticle;
+//	public GameObject DollParticle;
+//	public GameObject TeddyParticle;
+//	public GameObject RobotParticle;
+
     public void start()
     {
         RobotGrappleSource = GetComponent<AudioSource>();
+
+	
     }
 
 
@@ -101,9 +108,11 @@ public class GrappleShoot : RangedAbility
         rb.isKinematic = false;
 
         controller.movementEnabled = true;
+
+
     }
 
-    private class Grapple : MonoBehaviour
+	private class Grapple : MonoBehaviour
     {
         public GrappleTarget target;
         public Transform source;
@@ -134,9 +143,28 @@ public class GrappleShoot : RangedAbility
                     {
                         Rigidbody rb = controller.GetComponent<Rigidbody>();
 
+
+						//trying to make the particle effect on each player as they press to go up the teleporter turn on while teleporting and then turn off once theyve landed at the point
+						//my attempt but it says i cant use a non-static refrernce here so comes up as null in the console
+						//referencing from the class above
+						//the object particles are on each player named as "TeleporterLine"
+
+//						GnomeParticle.SetActive (true);
+//						TeddyParticle.SetActive (true);
+//						DollParticle.SetActive (true);
+//						RobotParticle.SetActive (true);
+
                         if (!rb.isKinematic)
                             target.StartCoroutine(Zipline(controller.transform, rb, traversalTime, controller.transform.position, target.transform.position + target.offset));
-                    }
+
+						//trying to turn it off once they landed as while they are in the air isKinematic is turned on but when landed it turns back on which is when i want the particles to turn off
+
+//						GnomeParticle.SetActive (false);
+//						TeddyParticle.SetActive (false);
+//						DollParticle.SetActive (false);
+//						RobotParticle.SetActive (false);
+
+					}
                 }
             }
         }
