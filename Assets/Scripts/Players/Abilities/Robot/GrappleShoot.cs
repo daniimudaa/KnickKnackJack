@@ -13,6 +13,11 @@ public class GrappleShoot : RangedAbility
 
     public AudioSource RobotGrappleSource;
     public AudioClip RobotGrappleAudio;
+	public AudioClip GrappleZoomAudio;
+	public AudioSource RobotLoopGrappleSource;
+
+	public GameObject teleporterRing;
+	public GameObject endTeleporterRing;
 
 //	public GameObject GnomeParticle;
 //	public GameObject DollParticle;
@@ -54,7 +59,10 @@ public class GrappleShoot : RangedAbility
                     if (currentTarget)
                     {
                         RobotGrappleSource.PlayOneShot(RobotGrappleAudio);
+						RobotLoopGrappleSource.Play();
                         controller.movementEnabled = false;
+						teleporterRing.SetActive (true);
+						endTeleporterRing.SetActive (true);
                         grapplePoint = new GameObject("grapple");
                         Grapple g = grapplePoint.AddComponent<Grapple>();
                         g.target = currentTarget;
@@ -79,6 +87,10 @@ public class GrappleShoot : RangedAbility
                         currentTarget.StartCoroutine(Zipline(transform, rigidbody, currentTarget.traversalTime, transform.position, currentTarget.transform.position + currentTarget.offset));
                     Destroy(grapplePoint);
                     currentTarget = null;
+					teleporterRing.SetActive (false);
+					endTeleporterRing.SetActive (false);
+					RobotLoopGrappleSource.Stop();
+
                 }
             }
         }
@@ -148,11 +160,13 @@ public class GrappleShoot : RangedAbility
 						//my attempt but it says i cant use a non-static refrernce here so comes up as null in the console
 						//referencing from the class above
 						//the object particles are on each player named as "TeleporterLine"
+						//also trying to play audio piece but its not static
 
 //						GnomeParticle.SetActive (true);
 //						TeddyParticle.SetActive (true);
 //						DollParticle.SetActive (true);
 //						RobotParticle.SetActive (true);
+//						RobotGrappleSource.PlayOneShot(GrappleZoomAudio);
 
                         if (!rb.isKinematic)
                             target.StartCoroutine(Zipline(controller.transform, rb, traversalTime, controller.transform.position, target.transform.position + target.offset));
