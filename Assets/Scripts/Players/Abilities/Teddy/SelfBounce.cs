@@ -7,6 +7,7 @@ public class SelfBounce : CharacterAbility
     public float statePercentage = .75F;
 
     public AudioClip teddyBouceAudio;
+	public AudioSource audioSource;
 
     private bool jumpLocked = false;
 
@@ -35,7 +36,7 @@ public class SelfBounce : CharacterAbility
             return info.normalizedTime >= statePercentage;
         });
 
-        AudioSource.PlayClipAtPoint(teddyBouceAudio, transform.position);
+		audioSource.PlayOneShot (teddyBouceAudio);
         rigidbody.AddForce(Vector3.up * bounceHeight, ForceMode.VelocityChange);
         jumpLocked = false;
     }

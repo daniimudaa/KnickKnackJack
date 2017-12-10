@@ -6,6 +6,15 @@ public class DeathTriggers : MonoBehaviour
 	UIScript UIscript;
 	MainMenus mainMenu;
 
+	public GameObject gnome;
+	public GameObject teddy;
+	public GameObject robot;
+	public GameObject doll;
+
+	CharController charControler;
+
+
+
 	public void Start ()
 	{
 		mainMenu = FindObjectOfType<MainMenus> ();
@@ -21,6 +30,7 @@ public class DeathTriggers : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
+
 			print ("DeathTriggers.OnTriggerEnter - 0");
 
 			Lives controller = col.GetComponent<Lives>();
@@ -73,7 +83,7 @@ public class DeathTriggers : MonoBehaviour
 				UIscript.Death1.SetActive(true);
 			}
 			if (lives <= 1)
-			{
+			{				
 				UIscript.Death3.SetActive(true);
 				UIscript.Death2.SetActive(true);
 				UIscript.Death1.SetActive(false);
@@ -97,6 +107,28 @@ public class DeathTriggers : MonoBehaviour
 				charcontroller.ReGround();
             }
 				
+
+			if (col.name == "Gnome") 
+			{
+				gnome.GetComponent<CharController>().playerAudioSource.clip = gnome.GetComponent<CharController>().deathSounds [Random.Range (1, gnome.GetComponent<CharController>().deathSounds.Length)];  
+				gnome.GetComponent<CharController>().playerAudioSource.Play (); 
+			}
+			if (col.name == "collider") 
+			{
+				teddy.GetComponent<CharController>().playerAudioSource.clip = teddy.GetComponent<CharController>().deathSounds [Random.Range (1, teddy.GetComponent<CharController>().deathSounds.Length)];  
+				teddy.GetComponent<CharController>().playerAudioSource.Play (); 
+			}
+			if (col.name == "Doll") 
+			{
+				doll.GetComponent<CharController>().playerAudioSource.clip = doll.GetComponent<CharController>().deathSounds [Random.Range (1, doll.GetComponent<CharController>().deathSounds.Length)];  
+				doll.GetComponent<CharController>().playerAudioSource.Play (); 
+			}
+			if (col.name == "Robot") 
+			{
+				robot.GetComponent<CharController>().playerAudioSource.clip = robot.GetComponent<CharController>().deathSounds [Random.Range (1, robot.GetComponent<CharController>().deathSounds.Length)];  
+				robot.GetComponent<CharController>().playerAudioSource.Play (); 
+			}
+
         }
     }
 }

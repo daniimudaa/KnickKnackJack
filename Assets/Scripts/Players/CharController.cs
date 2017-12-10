@@ -61,6 +61,13 @@ public class CharController : MonoBehaviour
 	public float teddyJumpVelocity = 100f;
 	public float teddyJumpGravity = 800f;
 
+	public AudioSource teddyAudioSource;
+	public AudioClip teddySqueak;
+	public bool audioPlay;
+
+	public AudioClip[] deathSounds;
+	public AudioSource playerAudioSource;
+
 
     void Start()
     {
@@ -76,6 +83,8 @@ public class CharController : MonoBehaviour
 		entered1 = false;
 		entered2 = false;
 		entered3 = false;
+
+		audioPlay = false;
     }
 
     void Update()
@@ -186,6 +195,8 @@ public class CharController : MonoBehaviour
             lastGround = transform.localPosition;
 			isTeddyJump = false;
 
+			audioPlay = false;
+
 			anim.SetBool ("jump", false);
 
             // If the controls are available and the jump button is down
@@ -199,6 +210,8 @@ public class CharController : MonoBehaviour
 
 				if (teddyJump) {
 					isTeddyJump = true;
+					audioPlay = true;
+
 					gameObject.GetComponent<Rigidbody> ().AddForce (Vector3.up * teddyJumpVelocity, ForceMode.VelocityChange);
 				} else {
 					gameObject.GetComponent<Rigidbody> ().AddForce (Vector3.up * variableForceUp, ForceMode.Impulse);
@@ -207,18 +220,31 @@ public class CharController : MonoBehaviour
         }
         else if (gameObject.GetComponent<Rigidbody>().useGravity)
         {
-			if (isTeddyJump) {
+			if (isTeddyJump) 
+			{
 				gameObject.GetComponent<Rigidbody> ().AddForce (Vector3.down * teddyJumpGravity, ForceMode.Force);
-			} else {
+			} 
+
+			else 
+			{
 				gameObject.GetComponent<Rigidbody> ().AddForce (Vector3.down * variableForceDown, ForceMode.Force);
 			}
 
 			anim.SetBool ("jump", true);
+
+			if (audioPlay) 
+			{
+				teddyAudioSource.PlayOneShot (teddySqueak);
+				audioPlay = false;
+			}
         }
     }
 
+
+
     public void ReGround()
     {
+		
 		regrounding = true;
         transform.localPosition = lastGround;
     }
