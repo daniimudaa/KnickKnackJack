@@ -6,6 +6,7 @@ public class PlayAnimation : MonoBehaviour
 {
 	private CharController controller;
 	public Animation anim;
+	public Animation anim2;
 
 	void OnTriggerEnter(Collider col)
 	{
@@ -24,7 +25,7 @@ public class PlayAnimation : MonoBehaviour
 
 		if (col.gameObject.name == "Doll") 
 		{
-			anim.Play();
+			anim2.Play();
 		}
 	
 	}
