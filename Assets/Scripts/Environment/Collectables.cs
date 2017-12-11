@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 
 public class Collectables : MonoBehaviour
@@ -9,25 +10,37 @@ public class Collectables : MonoBehaviour
 
     public GameObject blockedBy;
 
+	public GameObject colectParticle;
+
+	public AudioSource source;
+	public AudioClip collectSound;
+
+	public GameObject child;
+
     private void Awake()
     {
 		if (CollectableManager.GetCollectable(level).Contains(id))
             Destroy(gameObject);
     }
 
-    private void OnTriggerEnter(Collider col)
+	private IEnumerator OnTriggerEnter(Collider col)
     {
         if (blockedBy)
-            return;
+			yield return null;
 
         if (col.CompareTag("Player"))
         {
-            //play audio sound
-            //play particle effect
+			
+			source.PlayOneShot (collectSound);
+			GameObject clone = Instantiate(colectParticle, gameObject.transform.position, Quaternion.identity);
 
 			if (!CollectableManager.GetCollectable(level).Contains(id))
 				CollectableManager.GetCollectable(level).Add(id);
-            Destroy(gameObject);
+
+			child.SetActive (false);
+			yield return new WaitForSeconds(1.5f);
+			Destroy(clone);
+			Destroy(gameObject);
         }
     }
 }
