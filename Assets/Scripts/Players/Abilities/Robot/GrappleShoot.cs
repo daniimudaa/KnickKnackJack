@@ -16,7 +16,8 @@ public class GrappleShoot : RangedAbility
 	public AudioClip GrappleZoomAudio;
 	public AudioSource RobotLoopGrappleSource;
 
-	public GameObject teleporterRing;
+    public GameObject teleporterLine;
+    public GameObject teleporterRing;
 	public GameObject endTeleporterRing;
 
 //	public GameObject GnomeParticle;
@@ -61,7 +62,8 @@ public class GrappleShoot : RangedAbility
                         RobotGrappleSource.PlayOneShot(RobotGrappleAudio);
 						RobotLoopGrappleSource.Play();
                         controller.movementEnabled = false;
-						teleporterRing.SetActive (true);
+                        teleporterLine.SetActive (true);
+                        teleporterRing.SetActive (true);
 						endTeleporterRing.SetActive (true);
                         grapplePoint = new GameObject("grapple");
                         Grapple g = grapplePoint.AddComponent<Grapple>();
@@ -84,11 +86,14 @@ public class GrappleShoot : RangedAbility
                 else
                 {
                     if (!cancelBtn)
-						
-                    currentTarget.StartCoroutine(Zipline(transform, rigidbody, currentTarget.traversalTime, transform.position, currentTarget.transform.position + currentTarget.offset));
+                    {
+                        GameObject[] ziplineFx= { teleporterLine };
+                        currentTarget.StartCoroutine(Zipline(transform, rigidbody, currentTarget.traversalTime, transform.position, currentTarget.transform.position + currentTarget.offset, ziplineFx));
+                    }
+
                     Destroy(grapplePoint);
                     currentTarget = null;
-					teleporterRing.SetActive (false);
+                    teleporterRing.SetActive (false);
 					endTeleporterRing.SetActive (false);
 					RobotLoopGrappleSource.Stop();
 					gameObject.GetComponent<CharController> ().movementEnabled = true;
@@ -98,7 +103,7 @@ public class GrappleShoot : RangedAbility
         }
     }
 
-    private static IEnumerator Zipline(Transform t, Rigidbody rb, float traversalTime, Vector3 source, Vector3 destination)
+    private static IEnumerator Zipline(Transform t, Rigidbody rb, float traversalTime, Vector3 source, Vector3 destination, GameObject[] ziplineFx)
     {
         rb.isKinematic = true;
         t.position = source;
@@ -123,7 +128,9 @@ public class GrappleShoot : RangedAbility
 
         controller.movementEnabled = true;
 
-
+        foreach (GameObject fx in ziplineFx) {
+            fx.SetActive (false);
+        }
     }
 
 	private class Grapple : MonoBehaviour
@@ -171,7 +178,7 @@ public class GrappleShoot : RangedAbility
 //						RobotGrappleSource.PlayOneShot(GrappleZoomAudio);
 
                         if (!rb.isKinematic)
-                            target.StartCoroutine(Zipline(controller.transform, rb, traversalTime, controller.transform.position, target.transform.position + target.offset));
+                            target.StartCoroutine(Zipline(controller.transform, rb, traversalTime, controller.transform.position, target.transform.position + target.offset, null));
 
 						//trying to turn it off once they landed as while they are in the air isKinematic is turned on but when landed it turns back on which is when i want the particles to turn off
 
