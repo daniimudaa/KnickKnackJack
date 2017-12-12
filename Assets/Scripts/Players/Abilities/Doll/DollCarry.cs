@@ -43,7 +43,7 @@ public class DollCarry : RangedAbility
                     carrying = carryable;
                     carryable.transform.SetParent(armTransform);
 
-                   // carryCol.enabled = false;
+                    carryCol.enabled = false;
 
                     carrying.transform.localPosition = objectOffset;
                     carrying.transform.rotation = transform.rotation;
