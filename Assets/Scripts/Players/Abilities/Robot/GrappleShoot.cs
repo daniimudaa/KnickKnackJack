@@ -20,16 +20,13 @@ public class GrappleShoot : RangedAbility
     public GameObject teleporterRing;
 	public GameObject endTeleporterRing;
 
-//	public GameObject GnomeParticle;
-//	public GameObject DollParticle;
-//	public GameObject TeddyParticle;
-//	public GameObject RobotParticle;
+	public GameObject gnomeTeleporterLine;
+    public GameObject dollTeleporterLine;
+    public GameObject teddyTeleporterLine;
 
     public void start()
     {
         RobotGrappleSource = GetComponent<AudioSource>();
-
-	
     }
 
 
@@ -70,6 +67,7 @@ public class GrappleShoot : RangedAbility
                         g.target = currentTarget;
                         g.traversalTime = currentTarget.traversalTime;
                         g.source = transform;
+                        g.ziplineFx = new GameObject[] { gnomeTeleporterLine, teddyTeleporterLine, dollTeleporterLine };
 
                         LineRenderer lr = grapplePoint.AddComponent<LineRenderer>();
                         lr.useWorldSpace = true;
@@ -138,6 +136,7 @@ public class GrappleShoot : RangedAbility
         public GrappleTarget target;
         public Transform source;
         public float traversalTime;
+        public GameObject[] ziplineFx;
 
         private void Start()
         {
@@ -171,22 +170,14 @@ public class GrappleShoot : RangedAbility
 						//the object particles are on each player named as "TeleporterLine"
 						//also trying to play audio piece but its not static
 
-//						GnomeParticle.SetActive (true);
-//						TeddyParticle.SetActive (true);
-//						DollParticle.SetActive (true);
-//						RobotParticle.SetActive (true);
 //						RobotGrappleSource.PlayOneShot(GrappleZoomAudio);
 
+                        foreach (GameObject fx in ziplineFx) {
+                            fx.SetActive (true);
+                        }
+
                         if (!rb.isKinematic)
-                            target.StartCoroutine(Zipline(controller.transform, rb, traversalTime, controller.transform.position, target.transform.position + target.offset, null));
-
-						//trying to turn it off once they landed as while they are in the air isKinematic is turned on but when landed it turns back on which is when i want the particles to turn off
-
-//						GnomeParticle.SetActive (false);
-//						TeddyParticle.SetActive (false);
-//						DollParticle.SetActive (false);
-//						RobotParticle.SetActive (false);
-
+                            target.StartCoroutine(Zipline(controller.transform, rb, traversalTime, controller.transform.position, target.transform.position + target.offset, ziplineFx));
 					}
                 }
             }
