@@ -1,0 +1,224 @@
+fileFormatVersion: 2
+guid: 7908adcf6bb566b4c863a39ae717e4fe
+timeCreated: 1513126082
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: glass
+    100002: Pen_bic_002
+    100004: Pen_bic_003
+    100006: Pen_bic_004
+    100008: Pen_bic_005
+    100010: Pen_bic_006
+    100012: Pen_bic_007
+    100014: Pen_bic_008
+    100016: Pen_bic_01
+    100018: Pencil_t1_005
+    100020: Pencil_t1_006
+    100022: Pencil_t1_007
+    100024: Pencil_t1_008
+    100026: Pencil_t1_01
+    100028: Pencil_t1_02
+    100030: Pencil_t1_03
+    100032: Pencil_t1_04
+    100034: Pencil_t2_004
+    100036: Pencil_t2_005
+    100038: Pencil_t2_006
+    100040: Pencil_t2_01
+    100042: Pencil_t2_02
+    100044: Pencil_t2_03
+    100046: Pencil_t3_004
+    100048: Pencil_t3_005
+    100050: Pencil_t3_01
+    100052: Pencil_t3_02
+    100054: Pencil_t3_03
+    100056: //RootNode
+    400000: glass
+    400002: Pen_bic_002
+    400004: Pen_bic_003
+    400006: Pen_bic_004
+    400008: Pen_bic_005
+    400010: Pen_bic_006
+    400012: Pen_bic_007
+    400014: Pen_bic_008
+    400016: Pen_bic_01
+    400018: Pencil_t1_005
+    400020: Pencil_t1_006
+    400022: Pencil_t1_007
+    400024: Pencil_t1_008
+    400026: Pencil_t1_01
+    400028: Pencil_t1_02
+    400030: Pencil_t1_03
+    400032: Pencil_t1_04
+    400034: Pencil_t2_004
+    400036: Pencil_t2_005
+    400038: Pencil_t2_006
+    400040: Pencil_t2_01
+    400042: Pencil_t2_02
+    400044: Pencil_t2_03
+    400046: Pencil_t3_004
+    400048: Pencil_t3_005
+    400050: Pencil_t3_01
+    400052: Pencil_t3_02
+    400054: Pencil_t3_03
+    400056: //RootNode
+    2300000: glass
+    2300002: Pen_bic_002
+    2300004: Pen_bic_003
+    2300006: Pen_bic_004
+    2300008: Pen_bic_005
+    2300010: Pen_bic_006
+    2300012: Pen_bic_007
+    2300014: Pen_bic_008
+    2300016: Pen_bic_01
+    2300018: Pencil_t1_005
+    2300020: Pencil_t1_006
+    2300022: Pencil_t1_007
+    2300024: Pencil_t1_008
+    2300026: Pencil_t1_01
+    2300028: Pencil_t1_02
+    2300030: Pencil_t1_03
+    2300032: Pencil_t1_04
+    2300034: Pencil_t2_004
+    2300036: Pencil_t2_005
+    2300038: Pencil_t2_006
+    2300040: Pencil_t2_01
+    2300042: Pencil_t2_02
+    2300044: Pencil_t2_03
+    2300046: Pencil_t3_004
+    2300048: Pencil_t3_005
+    2300050: Pencil_t3_01
+    2300052: Pencil_t3_02
+    2300054: Pencil_t3_03
+    3300000: glass
+    3300002: Pen_bic_002
+    3300004: Pen_bic_003
+    3300006: Pen_bic_004
+    3300008: Pen_bic_005
+    3300010: Pen_bic_006
+    3300012: Pen_bic_007
+    3300014: Pen_bic_008
+    3300016: Pen_bic_01
+    3300018: Pencil_t1_005
+    3300020: Pencil_t1_006
+    3300022: Pencil_t1_007
+    3300024: Pencil_t1_008
+    3300026: Pencil_t1_01
+    3300028: Pencil_t1_02
+    3300030: Pencil_t1_03
+    3300032: Pencil_t1_04
+    3300034: Pencil_t2_004
+    3300036: Pencil_t2_005
+    3300038: Pencil_t2_006
+    3300040: Pencil_t2_01
+    3300042: Pencil_t2_02
+    3300044: Pencil_t2_03
+    3300046: Pencil_t3_004
+    3300048: Pencil_t3_005
+    3300050: Pencil_t3_01
+    3300052: Pencil_t3_02
+    3300054: Pencil_t3_03
+    4300000: glass
+    4300002: Pen_bic_002
+    4300004: Pen_bic_003
+    4300006: Pen_bic_004
+    4300008: Pen_bic_005
+    4300010: Pen_bic_006
+    4300012: Pen_bic_007
+    4300014: Pen_bic_008
+    4300016: Pen_bic_01
+    4300018: Pencil_t1_005
+    4300020: Pencil_t1_006
+    4300022: Pencil_t1_007
+    4300024: Pencil_t1_008
+    4300026: Pencil_t1_01
+    4300028: Pencil_t1_02
+    4300030: Pencil_t1_03
+    4300032: Pencil_t1_04
+    4300034: Pencil_t2_004
+    4300036: Pencil_t2_005
+    4300038: Pencil_t2_006
+    4300040: Pencil_t2_01
+    4300042: Pencil_t2_02
+    4300044: Pencil_t2_03
+    4300046: Pencil_t3_004
+    4300048: Pencil_t3_005
+    4300050: Pencil_t3_01
+    4300052: Pencil_t3_02
+    4300054: Pencil_t3_03
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
