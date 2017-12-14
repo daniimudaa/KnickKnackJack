@@ -11,7 +11,7 @@ public class TeddyPush : MonoBehaviour
 
 	void OnCollisionEnter (Collision col)
 	{
-		if (col.gameObject.name == "collider") 
+		if (col.gameObject.name == "collider" || col.gameObject.name == "Teddy") 
 		{
 			print ("TEDDDDDDDYYYYYYYYY");
 			gameObject.GetComponent<Rigidbody> ().isKinematic = false;
