@@ -7,6 +7,7 @@ public class PlayAnimation : MonoBehaviour
 	private CharController controller;
 	public Animation anim;
 	public Animation anim2;
+	public Animation anim3;
 
 	void OnTriggerEnter(Collider col)
 	{
@@ -18,7 +19,7 @@ public class PlayAnimation : MonoBehaviour
 			if (col.gameObject.name == "collider")
 			{
 				print ("Playing Animation");
-				anim.Play();
+				this.anim.Play();
 				Destroy (gameObject);
 			}		
 		}

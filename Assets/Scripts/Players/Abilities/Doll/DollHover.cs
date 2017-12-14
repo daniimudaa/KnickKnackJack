@@ -1,9 +1,13 @@
 ﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class DollHover : CharacterAbility
 {
 
     public float hoverTime = 4F;
+
+	public GameObject hair;
 
     private bool Hovering
     {
@@ -38,5 +42,23 @@ public class DollHover : CharacterAbility
 
         if (controls == null || !controls.GetButton(controls.buttonJump))
             Hovering = false;
-    }
+    
+		if (Hovering) 
+		{
+			hair.SetActive (true);
+		}
+
+
+		StartCoroutine (Hair ());
+	}
+
+	private IEnumerator Hair() 
+	{
+		if (!Hovering) 
+		{
+			yield return new WaitForSeconds(1f);
+			hair.SetActive (false);
+		}
+	}
+		
 }
