@@ -7,6 +7,9 @@ public class MouseTraps : MonoBehaviour
 	public Animator mousetrapAnim;
 	DeathTriggers deathscript;
 
+	public AudioClip clip;
+	public AudioSource source;
+
 	void Start ()
 	{
 		deathscript = gameObject.GetComponent<DeathTriggers>();
@@ -25,6 +28,7 @@ public class MouseTraps : MonoBehaviour
 		if (col.transform.tag == "Player") 
 		{
 			//mousetrapAnim.Play();
+			source.PlayOneShot(clip);
 		}
 
 	}
