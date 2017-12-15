@@ -19,7 +19,7 @@ public class PlayAnimation : MonoBehaviour
 			if (col.gameObject.name == "collider")
 			{
 				print ("Playing Animation");
-				this.anim.Play();
+				anim.Play();
 				Destroy (gameObject);
 			}		
 		}

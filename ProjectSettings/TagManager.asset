@@ -21,6 +21,8 @@ TagManager:
   - Shelf
   - JackInBox
   - Animation
+  - TeleporterLine
+  - Blocked
   layers:
   - Default
   - TransparentFX
